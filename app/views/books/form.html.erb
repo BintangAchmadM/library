@@ -1,0 +1,21 @@
+<%= form_with model: @book, url: books_path do |form| %>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :year %>
+      <%= form.number_field :year %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :author_id %>
+      <%= form.collection_select(:author_id, Author.all, :id, :name) %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Tambah Buku" %>
+    </div>
+  <% end %>
+  
